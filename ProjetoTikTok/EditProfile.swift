@@ -13,7 +13,7 @@ struct EditProfile: View {
             ZStack{
                 Color.white.ignoresSafeArea()
                 VStack {
-                    Image(.swiftGuy)
+                    Image("SwiftGuy")
                         .resizable(capInsets: EdgeInsets())
                         .aspectRatio(contentMode: .fit)
                         .clipShape(Circle())
@@ -156,6 +156,3 @@ struct EditProfile: View {
     }
 }
 
-#Preview {
-    EditProfile()
-}

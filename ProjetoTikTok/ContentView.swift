@@ -7,18 +7,7 @@
 
 import SwiftUI
 
-//struct Ocean: Identifiable {
-//    let name: String
-//}
-
 struct ContentView: View {
-    
-    @State var lista: [String] = ["a","b","c"]
-    
-    init(){
-        UITableView.appearance().backgroundColor = .clear
-    }
-    
     var body: some View {
         TabView {
             Profile()
@@ -29,7 +18,9 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
 
