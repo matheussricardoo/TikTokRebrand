@@ -14,6 +14,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("Menu", systemImage: "person.crop.circle")
                 }
+            Home()
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
         }
     }
 }

@@ -1,10 +1,3 @@
-//
-//  Profile.swift
-//  ProjetoTikTok
-//
-//  Created by Aluno Mack on 09/04/25.
-//
-
 import SwiftUI
 
 struct Profile: View {
