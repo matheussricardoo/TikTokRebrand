@@ -11,7 +11,6 @@ struct EditProfile: View {
     var body: some View {
         NavigationStack{
             ZStack{
-                Color.white.ignoresSafeArea()
                 VStack {
                     Image("SwiftGuy")
                         .resizable(capInsets: EdgeInsets())
@@ -135,16 +134,18 @@ struct EditProfile: View {
                                         Image(systemName: "chevron.forward")
                                             .foregroundStyle(.gray)
                                     }
+                                    
                                 })
                             }
-                        }
+                        }                    .listRowBackground(Color("TelaDoFundo"))
                     }
                     .listStyle(.plain)
                     .scrollDisabled(true)
                     .foregroundColor(.black)
-                    .background(Color.white)
                 }
             }
+            .background(Color("TelaDoFundo"))
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .toolbar{
                 ToolbarItem(placement: .principal){
                     Text("Edit profile")
@@ -152,7 +153,12 @@ struct EditProfile: View {
                 }
             }
         }
-        .font(Font.system(size: 15))
     }
 }
 
+struct Preview_EditProfile:PreviewProvider{
+    
+    static var previews: some View{
+        EditProfile()
+    }
+}

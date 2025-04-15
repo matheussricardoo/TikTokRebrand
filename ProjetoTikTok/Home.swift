@@ -10,15 +10,22 @@ import SwiftUI
 struct Home: View {
     @State private var selected = 0
     @State private var isBold = false
+    @State private var imageIndex = 0
+    var imageNames: [String] = ["goBook", "cBook", "swiftBook", "javaBook"]
     
     var body: some View {
         NavigationStack{
             ZStack{
-                Image("goBook")
-                    .resizable()
-                    .frame(height: 850)
-                    .padding(.top, -135)
-                
+                TabView(selection: $imageIndex) {
+                    ForEach(0..<imageNames.count, id: \.self) { index in
+                        Image("\(imageNames[index])")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                }
+                .frame(height: .infinity) // Step 10: Set Carousel Height
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // Step 11: Customize TabView Style
+                .ignoresSafeArea()
                 VStack (spacing: 10){
                     ZStack {
                         Button (action: {
@@ -47,6 +54,7 @@ struct Home: View {
                             .font(.system(size: 35))
                     })
                     Text("222")
+                        .font(Font.custom("ArialRoundedMTBold", size: 15))
                         .padding(.top, -10)
                         .bold()
                     
@@ -60,6 +68,7 @@ struct Home: View {
                         
                     })
                     Text("37")
+                        .font(Font.custom("ArialRoundedMTBold", size: 15))
                         .padding(.top, -10)
                         .bold()
                     
@@ -74,6 +83,7 @@ struct Home: View {
                         
                     })
                     Text("15")
+                        .font(Font.custom("ArialRoundedMTBold", size: 15))
                         .padding(.top, -10)
                         .bold()
                     
@@ -87,21 +97,19 @@ struct Home: View {
                         
                     })
                     Text("32")
+                        .font(Font.custom("ArialRoundedMTBold", size: 15))
                         .padding(.top, -10)
                         .bold()
                     
-                    Button (
-                        action: {
-                            // Return to the last screen
-                        }, label: {
-                            Image("goBook")
-                                .resizable(capInsets: EdgeInsets())
-                                .aspectRatio(contentMode: .fit)
-                                .clipShape(Circle())
-                                .frame(width: 65, height: 65)
-                        }
-                    )
-                    
+                    NavigationLink {
+                        BookContent()
+                    } label: {
+                        Image("goBook")
+                            .resizable(capInsets: EdgeInsets())
+                            .aspectRatio(contentMode: .fit)
+                            .clipShape(Circle())
+                            .frame(width: 65, height: 65)
+                    }
                 }
                 .padding(.bottom, -175)
                 .frame(maxWidth: .infinity, alignment: .trailing)
@@ -110,14 +118,17 @@ struct Home: View {
                     VStack(alignment: .leading) {
                         Spacer()
                         Text("User")
+                            .font(Font.custom("ArialRoundedMTBold", size: 18))
                             .bold()
                         Text("Meu livro favorito (Programming in C)")
+                            .font(Font.custom("ArialRoundedMT", size: 15))
                             .padding(.bottom, 50)
                     }
                     .padding(.leading, 15)
                     Spacer()
                 }
             }
+            .background(Color("TelaDoFundo"))
             .toolbar{
                 ToolbarItem(placement: .principal){
                     HStack{
@@ -126,10 +137,11 @@ struct Home: View {
                         }, label: {
                             if isBold {
                                 Text("Explore")
-                                    .bold()
+                                    .font(Font.custom("ArialRoundedMTBold", size: 18))
                             }
                             else {
                                 Text("Explore")
+                                    .font(Font.custom("ArialRoundedMTBold", size: 18))
                             }
                         })
                         .foregroundColor(.black)
@@ -139,10 +151,11 @@ struct Home: View {
                         }, label: {
                             if isBold {
                                 Text("Following")
-                                    .bold()
+                                    .font(Font.custom("ArialRoundedMTBold", size: 18))
                             }
                             else {
                                 Text("Following")
+                                    .font(Font.custom("ArialRoundedMTBold", size: 18))
                             }
                         })
                         .foregroundColor(.black)
@@ -152,10 +165,10 @@ struct Home: View {
                         }, label: {
                             if isBold {
                                 Text("For you")
-                                    .bold()
-                            }
+                                .font(Font.custom("ArialRoundedMTBold", size: 18))                            }
                             else {
                                 Text("For you")
+                                    .font(Font.custom("ArialRoundedMTBold", size: 18))
                             }
                         })
                         .foregroundColor(.black)
