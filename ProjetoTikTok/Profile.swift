@@ -8,7 +8,7 @@ struct Profile: View {
     @State private var isBold3: Bool = false
     @State private var isBold4: Bool = false
     @State private var isBold5: Bool = false
-
+    
     @State var boldness: Bool = false
     
     func turnGray(_ a1: inout Bool, _ a2: inout Bool, _ a3: inout Bool, _ a4: inout Bool, _ a5: inout Bool) {
@@ -26,7 +26,7 @@ struct Profile: View {
         NavigationStack{
             ZStack{
                 VStack (alignment: .center){
-                    Image("peixeboi")
+                    Image("SwiftGuy")
                         .resizable(capInsets: EdgeInsets())
                         .aspectRatio(contentMode: .fit)
                         .clipShape(Circle())
@@ -119,13 +119,13 @@ struct Profile: View {
                     
                     if(screen == 0) {
                         HStack (spacing: 0){
-                            Image("peixeboi")
+                            Image("goBook")
                                 .resizable()
                                 .frame(width: 137, height: 182)
-                            Image("peixeboi")
+                            Image("erlangBook")
                                 .resizable()
                                 .frame(width: 137, height: 182)
-                            Image("peixeboi")
+                            Image("luaBook")
                                 .resizable()
                                 .frame(width: 137, height: 182)
                         }
@@ -142,13 +142,13 @@ struct Profile: View {
                             .padding()
                     }else if(screen == 2) {
                         HStack (spacing: 0){
-                            Image("peixeboi")
+                            Image("cBook")
                                 .resizable()
                                 .frame(width: 137, height: 182)
-                            Image("peixeboi")
+                            Image("swiftBook")
                                 .resizable()
                                 .frame(width: 137, height: 182)
-                            Image("peixeboi")
+                            Image("javaBook")
                                 .resizable()
                                 .frame(width: 137, height: 182)
                         }
@@ -158,7 +158,7 @@ struct Profile: View {
                                 Button (action: {
                                     isBold1.toggle()
                                 }, label: {
-//                                    turnGray(&isBold1, &isBold2, &isBold3, &isBold4, &isBold5)
+                                    //                                    turnGray(&isBold1, &isBold2, &isBold3, &isBold4, &isBold5)
                                     if isBold1 {
                                         Text("Posts")
                                             .font(boldness ? Font.custom("ArialRoundedMTBold", size: 15) : Font.custom("", size: 15))
@@ -213,13 +213,13 @@ struct Profile: View {
                         }
                     }else if(screen == 4) {
                         HStack (spacing: 0){
-                            Image("peixeboi")
+                            Image("pythonBook")
                                 .resizable()
                                 .frame(width: 137, height: 182)
-                            Image("peixeboi")
+                            Image("elixirBook")
                                 .resizable()
                                 .frame(width: 137, height: 182)
-                            Image("peixeboi")
+                            Image("sqlBook")
                                 .resizable()
                                 .frame(width: 137, height: 182)
                         }

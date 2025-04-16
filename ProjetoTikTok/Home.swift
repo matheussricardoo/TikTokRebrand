@@ -120,7 +120,7 @@ struct Home: View {
                         Text("User")
                             .font(Font.custom("ArialRoundedMTBold", size: 18))
                             .bold()
-                        Text("Meu livro favorito (Programming in C)")
+                        Text("My favorite books.")
                             .font(Font.custom("ArialRoundedMT", size: 15))
                             .padding(.bottom, 50)
                     }

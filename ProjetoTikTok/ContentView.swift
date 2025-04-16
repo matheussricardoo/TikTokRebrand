@@ -14,6 +14,22 @@ struct ContentView: View {
                 .tabItem {
                     Label("Home", systemImage: "books.vertical.fill")
                 }
+            
+            Text("Oi >.<")
+                .tabItem {
+                    Label("Friends", systemImage: "person.2.fill")
+                }
+            
+            Text("Oi >.<")
+                .tabItem {
+                    Label("", systemImage: "plus.rectangle.fill.on.rectangle.fill")
+                }
+            
+            Text("Oi >.<")
+                .tabItem {
+                    Label("Inbox", systemImage: "ellipsis.message.fill")
+                }
+            
             Profile()
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")

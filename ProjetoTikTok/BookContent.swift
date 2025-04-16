@@ -38,21 +38,20 @@ struct BookContent: View {
                         Button {
                             
                         } label: {
-                            Image("")
                             Text("Add to Apple Books")
                                 .foregroundColor(.black)
                         }
                         .buttonStyle(.bordered)
-
+                        
                         Button {
                             
                         } label: {
                             Image(systemName: "bookmark")
                                 .foregroundColor(.black)
-
+                            
                             Text("Add to Favorites")
                                 .foregroundColor(.black)
-
+                            
                         }
                         .buttonStyle(.bordered)
                     }
